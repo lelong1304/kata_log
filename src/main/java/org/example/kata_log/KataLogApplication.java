@@ -13,7 +13,7 @@ You're given a list of log entries, each in the format:
 
 Your task is to build the core logic that filters log entries by level (ERROR, INFO, WARN) and date range (start date and end date).
 
-Methode signature: getLogsByLevel(String level)
+Methode signature: getLogsByLevel(String log, String level)
  */
 
 @SpringBootApplication
