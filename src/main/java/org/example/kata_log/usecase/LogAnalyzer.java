@@ -25,15 +25,15 @@ public class LogAnalyzer implements LogAnalyzerUseCase{
                 LocalDateTime date = LocalDateTime.parse(parts[0]);
                 String level = parts[1];
                 String message = parts[2];
-                logEntries.add(new LogEntry(date, level, message));
+                logEntries.add(new LogEntry(date, Level.valueOf(level), message));
             }
         }
         return logEntries;
     }
     @Override
-    public List<LogEntry> getLogsByLevel(String log, String level) {
+    public List<LogEntry> getLogsByLevel(String log, Level level) {
         return logs.stream()
-                .filter(l -> l.level().equalsIgnoreCase(level))
+                .filter(l -> l.level().equals(level))
                 .collect(Collectors.toList());
     }
 }

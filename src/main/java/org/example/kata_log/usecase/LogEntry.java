@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 
 public record LogEntry(
         LocalDateTime date,
-        String level,
+        Level level,
         String message
 ) {
 }
-

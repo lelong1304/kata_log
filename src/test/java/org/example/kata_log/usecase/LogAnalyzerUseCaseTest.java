@@ -15,7 +15,7 @@ class LogAnalyzerUseCaseTest {
                 "2025-05-06T10:16:05 ERROR Failed to connect to DB";
 
         useCase = new LogAnalyzer(log);
-        List<LogEntry> warns = useCase.getLogsByLevel(log, "WARN");
+        List<LogEntry> warns = useCase.getLogsByLevel(log, Level.WARN);
 
         assertThat(warns).hasSize(1);
     }
@@ -27,7 +27,7 @@ class LogAnalyzerUseCaseTest {
                 "2025-05-06T10:16:05 ERROR Failed to connect to DB";
 
         useCase = new LogAnalyzer(log);
-        List<LogEntry> errors = useCase.getLogsByLevel(log, "ERROR");
+        List<LogEntry> errors = useCase.getLogsByLevel(log, Level.ERROR);
 
         assertThat(errors).hasSize(1);
     }
